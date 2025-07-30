@@ -6,7 +6,7 @@ import org.quartz.JobExecutionException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class WorkflowJob implements Job{
+public class WorkflowJob implements Job {
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {

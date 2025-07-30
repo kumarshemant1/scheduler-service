@@ -26,10 +26,18 @@ public class HolidayService {
 		LocalDate current = firstDayOfMonth;
 		while(Boolean.TRUE) {
 			boolean isWeekend = (current.getDayOfWeek() == DayOfWeek.SATURDAY || current.getDayOfWeek() == DayOfWeek.SUNDAY);
-			
+			boolean isHoliday = Boolean.FALSE;
+			for(Holiday holiday : holidaysOfMonth) {
+				if(holiday.getHolidayDate().equals(current)) {
+					isHoliday = Boolean.TRUE;
+					break;
+				}
+			}
+			if(!isWeekend && !isHoliday) {
+				break;
+			}
+			current = current.plusDays(1);
 		}
-		
-
 		return current;
 	}
 }
