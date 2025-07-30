@@ -24,10 +24,10 @@ public class JobsSchedulerConfig {
 	@PostConstruct
 	public void scheduleJobs() throws Exception {
 		JobDetail job = JobBuilder.newJob(WorkflowJob.class)
-				.withIdentity("firstJob", "barclays")
+				.withIdentity("firstJob", "india")
 				.build();
 		Trigger trigger = TriggerBuilder.newTrigger()
-				.withIdentity("firstTrigger", "barclays")
+				.withIdentity("firstTrigger", "india")
 				.startNow()
 				.withSchedule(CronScheduleBuilder.cronSchedule("0 * * * * ?"))
 				.build();
